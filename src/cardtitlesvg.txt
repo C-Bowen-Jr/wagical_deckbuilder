@@ -1,0 +1,20 @@
+<svg height="80" width="800" transform="scale(0.5,0.5)" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" width="92" height="96">
+      <feOffset in="SourceAlpha" dx="-2" dy="2" />
+      <feGaussianBlur stdDeviation="2" />
+      <feBlend in="SourceGraphic" in2="blurOut" />
+    </filter>
+  </defs>
+  
+  <rect id="card" x="10" y="10" width="682" height="64" stroke="black" stroke-width="2" fill="#e5e5e5" rx="12" ry="32" filter="url(#shadow)" /> />
+  
+  <circle cx="660" cy="42" r="20" fill="ivory" filter="url(#shadow)" />
+  <circle cx="614" cy="42" r="20" fill="ivory" filter="url(#shadow)" />
+  <circle cx="568" cy="42" r="20" fill="green" filter="url(#shadow)" />
+  <circle cx="522" cy="42" r="20" fill="green" filter="url(#shadow)" />
+  <circle cx="476" cy="42" r="20" fill="green" filter="url(#shadow)" />
+  <circle cx="430" cy="42" r="20" fill="darkgrey" filter="url(#shadow)" />
+  
+  <text fill="black" font-size="42" transform="scale(0.88,0.95)" stroke="black" stroke-wide="0.1" font-family="Matrix" x="24" y="62">Autochthon Wurm</text>
+</svg>

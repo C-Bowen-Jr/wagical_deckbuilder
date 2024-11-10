@@ -1,0 +1,77 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+input {
+  color: white;
+  border: 2px solid #404040;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 0px 8px;
+}
+
+.buffer {
+  padding-bottom: 400px;
+}
+.searchbar {
+  border: 0.25rem solid black;
+  background-color: #888;
+  padding-block: 2rem;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: auto auto;
+  border: 0.25rem solid black;
+  border-top: 0px;
+  background-color:#888;
+  padding: 1rem;
+}
+
+.searchresults {
+  background-color: #efefef;
+  border: 0.5rem solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.deck {
+  color: black;
+  background-color: #ddd;
+  border: 0.25rem solid black;
+  padding: 1rem;
+  max-height: 100rem;
+  min-width: 15rem;
+  overflow: scroll;
+}
+
+.card-title {
+  position: relative;
+  display: inline-block;
+}
+
+.card-image {
+  position: absolute;
+  transform: translate(600px,-200px);
+  scale: 70%;
+  z-index: 100;
+  display: none;
+}
+
+.card-title:hover .card-image {
+  display: block;
+}
+
+.card-image img {
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
