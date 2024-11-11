@@ -1,8 +1,20 @@
-# React + Vite
+# Wagical Deckbuilder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Wagical Deckbuilder is a version 2.0 rewrite from the ground up of an earlier [project](https://github.com/C-Bowen-Jr/wagic_deck_builder). There is a trade off of complexity to compile, run, or modify between these 
+two versions. However, the improved graphical aspect of the 2.0+ version should be considered worth it for 
+those who care about the card art. This tool can also be utilized as a local deck list notation/archival 
+tool.
 
-Currently, two official plugins are available:
+## Features
+- Improved search result
+- Card spoilers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+
+Currently at an early stage of development
+
+## Usage
+
+Card search functions based on scryfall. Clicking a card name bar adds 1 of that card to the decklist. 
+Still early development, no other features.
