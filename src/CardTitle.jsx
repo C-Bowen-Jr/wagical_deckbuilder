@@ -9,28 +9,47 @@ function firstSideName(name) {
     return sides[0] + `\u{293b}`;
 }
 
+function letterToColorName(letter) {
+    if (letter.includes("W")) {
+        return "ivory";
+    }
+    else if (letter.includes("U")) {
+        return "skyblue";
+    }
+    else if (letter.includes("R")) {
+        return "lightcoral";
+    }
+    else if (letter.includes("G")) {
+        return "darkseagreen";
+    }
+    else { // Swamp and colorless share this
+        return "darkgrey";
+    }
+}
 function drawMana(costs) {
     // Draws colored mana cost circles, then writes the colorless cost number
-    // TODO: add mana symbols onto circles
     const circles = [];
     // Negate double sided costs (ie Young Blue Dragon)
     const cost = costs.split(" // ")[0];
-    const manaSymbols = cost.match(/\{([X\d+]|[WUBRGC](\/P)?)\}/g); // Regex to match mana symbols
+    // Remove {, then create an array split at }, then filter out empty strings
+    const manaSymbols = cost.replace(/\{/g, "").split("}").filter(Boolean);
   
     if (manaSymbols) {
       // Reverse symbol collection, push will reverse the list (restoring order)
-      manaSymbols.reverse().forEach((costSymbol, index) => {
-        // Strip '{}'
-        const symbol = costSymbol.replace(/\{|\}/g, "");
+      manaSymbols.reverse().forEach((symbol, index) => {
    
         // Convert WUBRG letters into SVG named colors (maybe exact hex values later?)
-        const color = symbol.includes('W') ? 'ivory' : symbol.includes('R') ? 'lightcoral' : symbol.includes('G') ? 'darkseagreen' : symbol.includes('U') ? 'skyblue' : 'darkgrey';
+        const color = letterToColorName(symbol[0]);
         const cx = 660 - index * 46; // Adjust the x position based on index
         circles.push(<circle key={index} cx={cx} cy="42" r="20" fill={color} filter="url(#shadow)" />);
 
         // Psuedo Mana Symbols on circles
         if (symbol.includes('P')) {
             circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-14} y="55">{`\u03D5`}</text>)
+        }
+        else if(symbol.includes('/')) {
+            const secondColor = letterToColorName(symbol[2]);
+            circles.push(<path key={index+10} d={`M ${cx - 20} 42 A 20 20 0 0 1 ${cx + 20} 42`} transform={`rotate(135 ${cx} 42)`} fill={secondColor} />);
         }
         else if (symbol.includes('W')) {
             circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-16} y="55">{`\u2600`}</text>)
