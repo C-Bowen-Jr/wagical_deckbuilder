@@ -2,6 +2,8 @@ import { useState } from 'react'
 //import { Input } from "@/components/ui/input"
 import CardTitle from './CardTitle.jsx'
 import SearchCard from './SearchCard.jsx'
+import CardQuantitySelect from './CardQuantitySelect.jsx'
+import CardSetSelect from './CardSetSelect.jsx'
 import './App.css'
 
 // ?= operator not yet JS approved
@@ -16,7 +18,7 @@ function App() {
   }
 
   const handleAddCard = (thisCard) => {
-    console.log(thisCard);
+    //console.log(thisCard);
     setDeckList([...deckList, thisCard]);
   }
 
@@ -47,10 +49,10 @@ function App() {
               {deckList.map((eachCard) => {
                 return(
                   <tr>
-                    <td>{'\u2460'}</td>
+                    <td><CardQuantitySelect /></td>
                     <td>{eachCard.name}</td>
                     <td>{eachCard.type}</td>
-                    <td>{eachCard.set}</td>
+                    <td><CardSetSelect default={eachCard.set} searching={eachCard.name}/></td>
                   </tr>
                 )
               })}
