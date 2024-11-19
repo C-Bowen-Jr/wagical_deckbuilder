@@ -11,15 +11,28 @@ import './App.css'
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
-  const [deckList, setDeckList] = useState([]);
+  const [creatureList, setCreatureList] = useState([]);
+  const [spellList, setSpellList] = useState([]);
+  const [permanentList, setPermanentList] = useState([]);
+  const [landList, setLandList] = useState([]);
 
   const handleSearchResult = (data) => {
     setSearchResult(data);
   }
 
   const handleAddCard = (thisCard) => {
-    //console.log(thisCard);
-    setDeckList([...deckList, thisCard]);
+    if (thisCard.type.includes("Creature")) {
+      setCreatureList([...creatureList, thisCard]);
+    }
+    else if (thisCard.type.includes("Instant") || thisCard.type.includes("Sorcery")) {
+      setSpellList([...spellList, thisCard]);
+    }
+    else if (thisCard.type.includes("Land")) {
+      setLandList([...landList, thisCard]);
+    }
+    else {
+      setPermanentList([...permanentList, thisCard]);
+    }
   }
 
   return (
@@ -46,9 +59,43 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {deckList.map((eachCard) => {
+              <tr> <td></td><td className="card-type">Creatures</td></tr>
+              {creatureList.map((eachCard) => {
                 return(
-                  <tr>
+                  <tr className="debug">
+                    <td><CardQuantitySelect /></td>
+                    <td>{eachCard.name}</td>
+                    <td>{eachCard.type}</td>
+                    <td><CardSetSelect default={eachCard.set} searching={eachCard.name}/></td>
+                  </tr>
+                )
+              })}
+              <tr> <td></td><td className="card-type">Permanents</td></tr>
+              {permanentList.map((eachCard) => {
+                return(
+                  <tr className="debug">
+                    <td><CardQuantitySelect /></td>
+                    <td>{eachCard.name}</td>
+                    <td>{eachCard.type}</td>
+                    <td><CardSetSelect default={eachCard.set} searching={eachCard.name}/></td>
+                  </tr>
+                )
+              })}
+              <tr> <td></td><td className="card-type">Spells</td></tr>
+              {spellList.map((eachCard) => {
+                return(
+                  <tr className="debug">
+                    <td><CardQuantitySelect /></td>
+                    <td>{eachCard.name}</td>
+                    <td>{eachCard.type}</td>
+                    <td><CardSetSelect default={eachCard.set} searching={eachCard.name}/></td>
+                  </tr>
+                )
+              })}
+              <tr> <td></td><td className="card-type">Lands</td></tr>
+              {landList.map((eachCard) => {
+                return(
+                  <tr className="debug">
                     <td><CardQuantitySelect /></td>
                     <td>{eachCard.name}</td>
                     <td>{eachCard.type}</td>
