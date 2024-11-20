@@ -39,22 +39,22 @@ input {
   border: 0.25rem solid black;
   border-top: 0px;
   background-color:#888;
-  padding: 1rem;
+  padding: 0.25rem;
 }
 
 .searchresults {
   background-color: #efefef;
   border: 0.5rem solid black;
   border-radius: 1rem;
-  padding: 0.5rem;
-  margin-right: 1rem;
+  padding: 0.25rem 0;
+  min-width: "380px";
 }
 
 .deck {
   color: black;
   background-color: #ddd;
   border: 0.25rem solid black;
-  padding: 1rem;
+  padding: 0.25rem 0;
   max-height: 100rem;
   min-width: 15rem;
   overflow: scroll;
