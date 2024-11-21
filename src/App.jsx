@@ -4,6 +4,7 @@ import CardTitle from './CardTitle.jsx'
 import SearchCard from './SearchCard.jsx'
 import CardQuantitySelect from './CardQuantitySelect.jsx'
 import CardSetSelect from './CardSetSelect.jsx'
+import TextFile from './TextFile.jsx'
 import './App.css'
 
 // ?= operator not yet JS approved
@@ -106,6 +107,7 @@ function App() {
             </tbody>
           </table>
         </div>
+        <TextFile categories={{creatureList, permanentList, spellList, landList}} />
       </div>
       <div className="buffer" />
     </>

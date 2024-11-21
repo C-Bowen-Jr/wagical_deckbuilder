@@ -30,13 +30,17 @@ function SearchCard({ onSearch }) {
 
         const foundCards = await response.json();
         const cardsSimplified = [];
-        
         foundCards.data.forEach((foundCard) => {
+            let image = foundCard.image_uris["normal"];
+            if (image === undefined) {
+                image = "../src/default_back.jpg";
+            }
+            console.log(image);
           const cardSimplified = {
               name: foundCard.name,
               mana_cost: foundCard.mana_cost,
               type: simplyType(foundCard.type_line),
-              thumbnail: foundCard.image_uris["normal"],
+              thumbnail: image,
               set: foundCard.set.toUpperCase(),
           }
           cardsSimplified.push(cardSimplified);
