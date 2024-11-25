@@ -35,7 +35,6 @@ function SearchCard({ onSearch }) {
             if (image === undefined) {
                 image = "../src/default_back.jpg";
             }
-            console.log(image);
           const cardSimplified = {
               name: foundCard.name,
               mana_cost: foundCard.mana_cost,
