@@ -50,9 +50,9 @@ export default function CardSetSelect(props) {
             id: 'set_code_select',
           }}
         >
-          {inSets.map((eachSet) => {
+          {inSets.map((eachSet, index) => {
                 return(
-                  <option key={eachSet} value={eachSet}>{eachSet}</option>
+                  <option key={index} value={eachSet}>{eachSet}</option>
                 )
               })}
         </NativeSelect>
