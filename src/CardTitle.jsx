@@ -52,25 +52,25 @@ function drawMana(costs) {
             circles.push(<path key={index+10} d={`M ${cx - 20} 42 A 20 20 0 0 1 ${cx + 20} 42`} transform={`rotate(135 ${cx} 42)`} fill={secondColor} />);
         }
         else if (symbol.includes('W')) {
-            circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-16} y="55">{`\u2600`}</text>)
+            circles.push(<text key={index+10} fill="black" fontSize="38" fontFamily="Ariel" x={cx-16} y="55">{`\u2600`}</text>)
         }
         else if (symbol.includes('U')) {
-            circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-14} y="55">{`\u2602`}</text>)
+            circles.push(<text key={index+10} fill="black" fontSize="38" fontFamily="Ariel" x={cx-14} y="55">{`\u2602`}</text>)
         }
         else if (symbol.includes('B')) {
-            circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-10} y="55">{`\u2620`}</text>)
+            circles.push(<text key={index+10} fill="black" fontSize="38" fontFamily="Ariel" x={cx-10} y="55">{`\u2620`}</text>)
         }
         else if (symbol.includes('R')) {
-            circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-16} y="55">{`\u2668`}</text>)
+            circles.push(<text key={index+10} fill="black" fontSize="38" fontFamily="Ariel" x={cx-16} y="55">{`\u2668`}</text>)
         }
         else if (symbol.includes('G')) {
-            circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-14} y="55">{`\u2618`}</text>)
+            circles.push(<text key={index+10} fill="black" fontSize="38" fontFamily="Ariel" x={cx-14} y="55">{`\u2618`}</text>)
         }
         else 
   
         // Not swamp, but uses dark grey is X or #
         if(!symbol.includes('B') && color === 'darkgrey') {
-          circles.push(<text key={index+10} fill="black" font-size="38" font-family="Ariel" x={cx-12} y="55">{symbol}</text>);
+          circles.push(<text key={index+10} fill="black" fontSize="38" fontFamily="Ariel" x={cx-12} y="55">{symbol}</text>);
         }
       });
     }
